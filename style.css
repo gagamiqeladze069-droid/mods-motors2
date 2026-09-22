@@ -1,0 +1,452 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* მთელი გვერდი */
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at 20% 20%, #174a8b, transparent 30%),
+        radial-gradient(circle at 80% 80%, #6b4b12, transparent 30%),
+        linear-gradient(135deg, #020817, #071b38, #020817);
+
+    background-size: 200% 200%;
+
+    animation: backgroundMove 12s ease infinite;
+
+    color: white;
+
+    padding: 50px 20px;
+
+    overflow-x: hidden;
+}
+
+
+/* ფონის მოძრაობა */
+
+@keyframes backgroundMove {
+
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+
+}
+
+
+/* ნაწილაკების მთავარი ყუთი */
+
+.particles {
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* თითოეული ნაწილაკი */
+
+.particles span {
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: #ffd700;
+
+    box-shadow:
+        0 0 8px #ffd700,
+        0 0 18px #fff0a0;
+
+    animation: particleMove 10s linear infinite;
+}
+
+
+/* ნაწილაკების მოძრაობა */
+
+@keyframes particleMove {
+
+    0% {
+        transform: translateY(110vh) scale(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-20vh) scale(1.5);
+        opacity: 0;
+    }
+
+}
+
+
+/* ნაწილაკების სხვადასხვა პოზიცია */
+
+.particles span:nth-child(1) {
+    left: 5%;
+    animation-delay: 1s;
+}
+
+.particles span:nth-child(2) {
+    left: 12%;
+    animation-delay: 4s;
+}
+
+.particles span:nth-child(3) {
+    left: 20%;
+    animation-delay: 2s;
+}
+
+.particles span:nth-child(4) {
+    left: 28%;
+    animation-delay: 6s;
+}
+
+.particles span:nth-child(5) {
+    left: 35%;
+    animation-delay: 3s;
+}
+
+.particles span:nth-child(6) {
+    left: 43%;
+    animation-delay: 7s;
+}
+
+.particles span:nth-child(7) {
+    left: 50%;
+    animation-delay: 2s;
+}
+
+.particles span:nth-child(8) {
+    left: 58%;
+    animation-delay: 5s;
+}
+
+.particles span:nth-child(9) {
+    left: 65%;
+    animation-delay: 1s;
+}
+
+.particles span:nth-child(10) {
+    left: 72%;
+    animation-delay: 8s;
+}
+
+.particles span:nth-child(11) {
+    left: 78%;
+    animation-delay: 4s;
+}
+
+.particles span:nth-child(12) {
+    left: 84%;
+    animation-delay: 6s;
+}
+
+.particles span:nth-child(13) {
+    left: 90%;
+    animation-delay: 3s;
+}
+
+.particles span:nth-child(14) {
+    left: 95%;
+    animation-delay: 7s;
+}
+
+.particles span:nth-child(15) {
+    left: 55%;
+    animation-delay: 9s;
+}
+
+
+/* მთავარი კონტენტი */
+
+main {
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 900px;
+
+    margin: auto;
+}
+
+
+/* მთავარი სათაური */
+
+.hero {
+    text-align: center;
+
+    padding: 45px 25px;
+
+    margin-bottom: 35px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 215, 0, 0.5);
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 0 30px rgba(0, 0, 0, 0.4),
+        inset 0 0 30px rgba(255, 215, 0, 0.05);
+
+    animation: heroAppear 1s ease;
+}
+
+
+/* სათაურის გამოჩენა */
+
+@keyframes heroAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* სათაური */
+
+.hero h1 {
+    font-size: 48px;
+
+    color: #ffd700;
+
+    text-shadow:
+        0 0 10px rgba(255, 215, 0, 0.7),
+        0 0 25px rgba(255, 215, 0, 0.4);
+
+    margin: 18px 0;
+}
+
+
+/* ქვესათაური */
+
+.hero p {
+    font-size: 18px;
+
+    color: #e5e7eb;
+}
+
+
+/* დეკორატიული ხაზები */
+
+.flag-line {
+    width: 100px;
+
+    height: 3px;
+
+    margin: auto;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #ffd700,
+        transparent
+    );
+
+    box-shadow: 0 0 10px #ffd700;
+}
+
+
+/* ისტორიული ბარათი */
+
+.history-card {
+    position: relative;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    color: #111;
+
+    border-radius: 20px;
+
+    padding: 30px 35px 30px 80px;
+
+    margin-bottom: 22px;
+
+    border-left: 5px solid #ffd700;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.3);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+
+    animation: cardAppear 0.8s ease;
+}
+
+
+/* ბარათის გამოჩენა */
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* მაუსის მიტანისას */
+
+.history-card:hover {
+
+    transform: translateX(10px) scale(1.02);
+
+    border-left-color: #174a8b;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.45),
+        0 0 25px rgba(255, 215, 0, 0.35);
+}
+
+
+/* ნომერი */
+
+.number {
+    position: absolute;
+
+    left: 25px;
+    top: 30px;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #174a8b,
+        #0b2a52
+    );
+
+    color: #ffd700;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    box-shadow:
+        0 0 15px rgba(23, 74, 139, 0.6);
+}
+
+
+/* ბარათის სათაური */
+
+.history-card h2 {
+
+    font-size: 25px;
+
+    color: #12345b;
+
+    margin-bottom: 12px;
+}
+
+
+/* ბარათის ტექსტი */
+
+.history-card p {
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #222;
+}
+
+
+/* ქვედა ნაწილი */
+
+footer {
+
+    text-align: center;
+
+    margin-top: 40px;
+
+    padding: 25px;
+
+    color: #ffd700;
+
+    font-size: 22px;
+
+    letter-spacing: 3px;
+
+    text-shadow: 0 0 15px #ffd700;
+}
+
+
+/* ტელეფონისთვის */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 25px 12px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .history-card {
+        padding: 25px 20px 25px 65px;
+    }
+
+    .history-card h2 {
+        font-size: 21px;
+    }
+
+    .history-card p {
+        font-size: 16px;
+    }
+
+}
